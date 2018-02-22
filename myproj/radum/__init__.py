@@ -26,7 +26,7 @@ wnd.add(exp)
 wnd.show_all()
 df = pd.read_csv('/home/linuxlite/Desktop/sursa2.csv')
 m = ols('An ~ Procent',df).fit()
-#textview.get_buffer().insert_at_cursor(df.describe().to_string())
+textview.get_buffer().insert_at_cursor(df.describe().to_string())
 print m.summary()
 #sub_proc = Popen('/home/linuxlite/Desktop/child.py', stdout=PIPE, shell=True)
 #sub_outp = ""
@@ -34,7 +34,7 @@ print m.summary()
 builder=gtk.Builder()
 builder.add_from_file("interfata.glade")    
 window=builder.get_object("window1")
-filename="/home/linuxlite/Desktop/sursa2.csv"
+filename="/home/linuxlite/Desktop/sursa.csv"
 
 def main():
     signals={"on_window1_destroy":on_window1_destroy, "on_button1_clicked":on_button1_clicked, "on_button2_clicked":on_button2_clicked, "on_button3_clicked":on_button3_clicked, "on_imagemenuitem5_activate":on_imagemenuitem5_activate, "on_imagemenuitem2_activate":on_imagemenuitem2_activate}
